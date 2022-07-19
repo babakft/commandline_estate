@@ -1,6 +1,6 @@
 class Manager:
 
-    def __init__(self,class_name):
+    def __init__(self, class_name):
         self._class=class_name
 
 

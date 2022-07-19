@@ -8,3 +8,5 @@ class SellerInformation(BaseClass):
         self.lastname=last_name
         self.number=number
 
+    def __str__(self):
+       return f"{self.name}{self.lastname}   number:{self.number}"

@@ -1,14 +1,16 @@
 from abc import ABC
-from manager import Manager
+
+from base.search import Manager
 
 class BaseClass(ABC):
 
     objects_list=None
     manager=None
 
-    def __init__(self):
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args,**kwargs)
         self.add(self)
-
+        self.add_manager()
 
     @classmethod
     def add(cls,obj):
@@ -20,5 +22,5 @@ class BaseClass(ABC):
     @classmethod
     def add_manager(cls):
         if cls.manager is None:
-            cls.manager=Manager(cls)
+            cls.manager = Manager(cls)
 
