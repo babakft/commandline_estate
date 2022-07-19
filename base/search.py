@@ -8,9 +8,11 @@ class Manager:
 
         result=list()
         for key,value in kwargs.items():
-            for obj in self._class.object_list:
+            for obj in self._class.objects_list:
                 if hasattr(obj,key) and getattr(obj,key)==value:
                     result.append(obj)
 
         return result
 
+    def count(self):
+        return len(self._class.objects_list)

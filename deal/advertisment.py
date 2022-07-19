@@ -10,7 +10,9 @@ class ApartmentSell(BaseClass, Apartment, Sell):
         print("#" * 80)
         self.show_description()
         self.show_deal()
-        print("#"* 80)
+        print("#"* 80 +"\n")
+
+
 
 class ApartmentRent(BaseClass, Apartment, Rent):
     def __init__(self,*args,**kwargs):
@@ -20,7 +22,7 @@ class ApartmentRent(BaseClass, Apartment, Rent):
         print("#" * 80)
         self.show_description()
         self.show_deal()
-        print("#" * 80)
+        print("#" * 80 +"\n")
 class HouseSell(BaseClass, House, Sell):
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
@@ -29,7 +31,7 @@ class HouseSell(BaseClass, House, Sell):
         print("#" * 80)
         self.show_description()
         self.show_deal()
-        print("#" * 80)
+        print("#" * 80 +"\n")
 
 
 class HouseRent(BaseClass, House, Rent):
@@ -40,7 +42,7 @@ class HouseRent(BaseClass, House, Rent):
         print("#" * 80)
         self.show_description()
         self.show_deal()
-        print("#" * 80)
+        print("#" * 80 +"\n")
 
 
 class StoreSell(BaseClass, Store, Sell):
@@ -51,7 +53,8 @@ class StoreSell(BaseClass, Store, Sell):
         print("#" * 80)
         self.show_description()
         self.show_deal()
-        print("#" * 80)
+        print("#" * 80 +"\n")
+
 
 
 class StoreRent(BaseClass, Store, Rent):
@@ -62,4 +65,4 @@ class StoreRent(BaseClass, Store, Rent):
         print("#" * 80)
         self.show_description()
         self.show_deal()
-        print("#" * 80)
+        print("#" * 80 +"\n")
