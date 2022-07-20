@@ -1,10 +1,12 @@
-import inspect
-
 from base.baseclass import BaseClass
 from estate.estate import Apartment, House, Store
 from deal.deal_type import Rent,Sell
 from estate.sellerInformation import SellerInformation
 
+"""
+tha main file all of this class use there parent method 
+and combine them 
+"""
 
 class ApartmentSell(BaseClass, Apartment, Sell):
     def __init__(self,*args,**kwargs):

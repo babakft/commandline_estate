@@ -1,7 +1,9 @@
 import inspect
 from abc import ABC,abstractmethod
 
-
+"""
+this file is use just for inheritance and it's base for method that use in advertisement
+"""
 class Estate(ABC):
     def __init__(self,seller_information,area,room_count,build_year,region,address,*args,**kwargs):
         super().__init__(*args,**kwargs)
@@ -12,27 +14,26 @@ class Estate(ABC):
         self.region=region
         self.address=address
 
-
     @abstractmethod
     def show_description(self):
         pass
-
     def show_estate_description(self):
         print(f"seller_information = {self.seller_information}\n\n"
               f"room_count = {self.room_count}\t area ={self.area}\t"
               f"build_year ={self.build_year}\n"
               f"region ={self.region}\t address ={self.address}")
-
     @abstractmethod
     def show_argument(self):
         pass
-
     @staticmethod
     def show_estate_argument():
         argument=set()
         for arg in inspect.signature(Estate.__init__).parameters.values():
             argument.add(arg)
         return argument
+
+
+
 
 class Apartment(Estate):
     def __init__(self,has_elevator,has_parking,floor,*args,**kwargs):

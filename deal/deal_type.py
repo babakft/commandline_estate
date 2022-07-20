@@ -1,6 +1,10 @@
 import inspect
 from abc import ABC
 
+
+"""
+this file is use just for inheritance and it's base for method that use in advertisement
+"""
 class Sell(ABC):
     def __init__(self,price_per_meter,discount,convert_able,*args,**kwargs):
         super().__init__(*args, **kwargs)

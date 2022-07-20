@@ -1,9 +1,12 @@
 from estate.sellerInformation import SellerInformation
 from deal.deal_type import Rent,Sell
-from deal.advertisment import ApartmentSell,ApartmentRent,HouseRent,HouseSell,StoreRent,StoreSell
+from deal.advertisement import ApartmentSell,ApartmentRent,HouseRent,HouseSell,StoreRent,StoreSell
 from estate.estate import Apartment,House,Store
 
 
+"""
+    example that i use for insert instance and test project
+"""
 
 first = SellerInformation("babak", "fathi", 123)
 second  = SellerInformation("behnam", "fathi", 456)

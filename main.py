@@ -1,13 +1,10 @@
-import inspect
-from estate.sellerInformation import SellerInformation
-from estate.sellerInformation import SellerInformation
-from deal.deal_type import Rent,Sell
-from deal.advertisment import ApartmentSell,ApartmentRent,HouseRent,HouseSell,StoreRent,StoreSell
-from estate.estate import Apartment,House,Store
-from example import *
+from example import store_rent,store_sell,house_sell,house_rent,apartment_rent,apartment_sell,ApartmentSell
+from example import ApartmentRent,HouseRent,HouseSell,StoreRent,StoreSell
 
 class ShowClient:
-
+    """
+    a class that show in command line in here we have search,browse,insert
+    """
     ADVERTISEMENT_TYPES = {
         "ApartmentSell": ApartmentSell, "ApartmentRent": ApartmentRent,
         "HouseRent": HouseRent, "HouseSell": HouseSell,
@@ -21,7 +18,9 @@ class ShowClient:
 
     @staticmethod
     def show_all_properties():
-
+        """
+        show every class list_object
+        """
         print("#"*25 + " all the properties " + "#"*25)
         for obj in ShowClient.ADVERTISEMENT_TYPES:
             print(f"{obj}:{ShowClient.ADVERTISEMENT_TYPES[obj].manager.count()}")
@@ -29,6 +28,12 @@ class ShowClient:
 
     @staticmethod
     def browse():
+
+        """
+           use show detail method in advertisement.py
+           and use it to show all property information
+        """
+
         user_input_browse = input("  0:exit\n  1:ApartmentSell\n  2:ApartmentRent\n  3:HouseRent\n  4:HouseSell\n"
                                       + "  5:StoreSell\n  6:StoreRent\n")
         if user_input_browse.isnumeric():
@@ -46,6 +51,13 @@ class ShowClient:
 
     @staticmethod
     def add_properties():
+
+        """
+                  method for insert new obj
+                  it uses one instance to get needed argument
+                  than use for loop to get needed argument => insert_argument()
+
+        """
 
         user_input_property = input("  0:exit\n  1:ApartmentSell\n  2:ApartmentRent\n  3:HouseRent\n  4:HouseSell\n"
                                       + "  5:StoreSell\n  6:StoreRent\n")
@@ -84,6 +96,11 @@ class ShowClient:
 
     @staticmethod
     def search():
+
+        """
+           use base. search to search
+        """
+
         user_search_input=input("  0:exit\n  1:search by region\n  2:search by area\n  3:search by room_count\n")
         result=list()
         def search_by(**kwargs):

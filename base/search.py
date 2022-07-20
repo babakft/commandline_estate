@@ -1,5 +1,7 @@
 class Manager:
-
+    """
+    manager use for search and find len of object_list for each class
+    """
     def __init__(self, class_name):
         self._class=class_name
 

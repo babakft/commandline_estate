@@ -3,7 +3,10 @@ from abc import ABC
 from base.search import Manager
 
 class BaseClass(ABC):
-
+    """
+    this file is use just for inheritance
+    this file adds an object list and manager to all the classes that inherit from it
+    """
     objects_list=None
     manager=None
 
