@@ -1,3 +1,4 @@
+import inspect
 from abc import ABC
 
 class Sell(ABC):
@@ -7,6 +8,12 @@ class Sell(ABC):
         self.discount=discount
         self.convert_able=convert_able
 
+    @staticmethod
+    def show_sell_argument():
+        argument = set()
+        for arg in inspect.signature(Sell.__init__).parameters.values():
+            argument.add(arg)
+        return argument
 
     def show_deal(self):
         print(f"\nprice_per_meter ={self.price_per_meter}\t discount ={self.discount}\t "
@@ -19,6 +26,12 @@ class Rent(ABC):
         self.rent_price=rent_price
         self.discount=discount
 
+    @staticmethod
+    def show_rent_argument():
+        argument = set()
+        for arg in inspect.signature(Rent.__init__).parameters.values():
+            argument.add(arg)
+        return argument
 
     def show_deal(self):
         print(f"\ninitial_price ={self.initial_price}\t rent_price ={self.rent_price}\t"
