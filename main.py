@@ -83,6 +83,43 @@ class ShowClient:
                 ShowClient.add_properties()
 
     @staticmethod
+    def search():
+        user_search_input=input("  0:exit\n  1:search by region\n  2:search by area\n  3:search by room_count\n")
+        result=list()
+        def search_by(**kwargs):
+            for obj in ShowClient.ADVERTISEMENT_TYPES_BROWSE.values():
+               search_result = obj.manager.search(**kwargs)
+               result.extend(search_result)
+            if len(result) !=0:
+                for i in result:
+                    i.show_detail()
+            else:
+                print("noting in properties")
+
+
+        if user_search_input.isnumeric():
+            user_search_input=int(user_search_input)
+            if user_search_input == 0:
+                ShowClient.main()
+            else:
+                if user_search_input == 1:
+                  base=input("please enter region \n")
+                  search_by(region=base)
+                if user_search_input == 2:
+                    base = input("please enter area \n")
+                    if base.isnumeric():
+                        base=int(base)
+                    search_by(area=base)
+                if user_search_input == 3:
+                    base = input("please enter room_count \n")
+                    if base.isnumeric():
+                        base=int(base)
+                    search_by(room_count=base)
+                ShowClient.search()
+        print("please enter valid number")
+        ShowClient.search()
+
+    @staticmethod
     def main():
 
             user_choose = input("\n"+ "for browsing in estate type '1' ,"
@@ -99,29 +136,9 @@ class ShowClient:
                     ShowClient.add_properties()
 
                 if user_choose == 3:
-                    ShowClient.main()
+                    ShowClient.search()
             print("please enter valid number")
             ShowClient.main()
 
-"""
-x= ApartmentSell.manager.search(has_elevator=True)
-print(len(x))
-for i in x:
-    pass
-    #print(i.show_detail())
-    
-    x=inspect.signature(Rent.__init__)
-z=[1,1,1,2,2,2,3,4,5,6,7,8,9,10]
-zz=set(z)
-
-for i in zz:
-    print(i)
-    
-    
-"""
-
-
 ShowClient.show_all_properties()
-
 ShowClient.main()
-

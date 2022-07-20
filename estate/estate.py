@@ -74,7 +74,6 @@ class Store(Estate):
     def __init__(self,*args, **kwargs):
         super().__init__(*args, **kwargs)
 
-
     def show_description(self):
         self.show_estate_description()
 
