@@ -5,12 +5,14 @@ from abc import ABC
 """
 this file is use just for inheritance and it's base for method that use in advertisement
 """
+
+
 class Sell(ABC):
-    def __init__(self,price_per_meter,discount,convert_able,*args,**kwargs):
+    def __init__(self, price_per_meter, discount, convert_able, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.price_per_meter=price_per_meter
-        self.discount=discount
-        self.convert_able=convert_able
+        self.price_per_meter = price_per_meter
+        self.discount = discount
+        self.convert_able = convert_able
 
     @staticmethod
     def show_sell_argument():
@@ -23,12 +25,13 @@ class Sell(ABC):
         print(f"\nprice_per_meter ={self.price_per_meter}\t discount ={self.discount}\t "
               f"convert_able ={self.convert_able}\t")
 
+
 class Rent(ABC):
-    def __init__(self,initial_price,rent_price,discount,*args,**kwargs):
+    def __init__(self, initial_price, rent_price, discount, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.initial_price=initial_price
-        self.rent_price=rent_price
-        self.discount=discount
+        self.initial_price = initial_price
+        self.rent_price = rent_price
+        self.discount = discount
 
     @staticmethod
     def show_rent_argument():
