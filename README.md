@@ -1,2 +1,3 @@
 # commandline_estate
-this is commandline real state that is write without database and gui
+this is commandline real state that is writen without database and gui
+it's able to brows,add and search in data
